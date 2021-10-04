@@ -1,10 +1,16 @@
+// plugins
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+
+// node stuff
 const glob = require("glob");
 const path = require("path");
 
+// ROOT VARS
 const HTML_FOLDER = "public/views";
 
+// PLUGIN MAGIC
 const views = glob.sync(path.join(HTML_FOLDER, "/*.html"), {}).map(
   (filePath) =>
     new HtmlWebpackPlugin({
@@ -18,24 +24,24 @@ module.exports = {
   mode: process.env.NODE_ENV,
   output: {
     filename: "main.js",
-    path: path.resolve(__dirname, "dist/")
+    path: path.resolve(__dirname, "dist/"),
   },
   module: {
     rules: [
       {
         test: /\.js$/i,
         loader: "babel-loader",
-        type: "javascript/auto"
+        type: "javascript/auto",
       },
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"]
+        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
       },
       {
         test: /\.html$/i,
-        use: ["html-loader"]
-      }
-    ]
+        use: ["html-loader"],
+      },
+    ],
   },
-  plugins: [new MiniCssExtractPlugin(), ...views]
+  plugins: [new CssMinimizerPlugin(), new MiniCssExtractPlugin(), ...views],
 };
