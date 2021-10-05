@@ -23,10 +23,7 @@
     "babel-loader": "8.2.2",
     "css-loader": "6.3.0",
     "css-minimizer-webpack-plugin": "^3.0.2",
-<<<<<<< HEAD
-=======
     "dotenv": "^10.0.0",
->>>>>>> 1679d2f (✨ Added lead form)
     "extract-loader": "5.1.0",
     "file-loader": "6.2.0",
     "html-loader": "2.1.2",
