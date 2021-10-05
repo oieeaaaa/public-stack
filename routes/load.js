@@ -22,7 +22,7 @@ router.get("/", (req, res, next) => {
     // verify request came from BigCommerce
     const data = bigCommerce.verify(req.query["signed_payload"]);
     if (typeof data.user !== "undefined") {
-      res.sendFile(path.join(__dirname, "../public/", "lead-form.html"));
+      res.sendFile(path.join(__dirname, "../dist/", "lead-form.html"));
     }
   } catch (err) {}
 });

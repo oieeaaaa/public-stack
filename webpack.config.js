@@ -26,6 +26,10 @@ module.exports = {
     filename: "main.js",
     path: path.resolve(__dirname, "dist/"),
   },
+  devServer: {
+    static: './dist',
+    hot: true,
+  },
   module: {
     rules: [
       {
@@ -36,6 +40,10 @@ module.exports = {
       {
         test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
       },
       {
         test: /\.html$/i,

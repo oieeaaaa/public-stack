@@ -6,6 +6,202 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    <div class="font-sans text-xs">My lead form</div>
+    <div class="support-contact max-w-md container mx-auto my-16 hidden">
+      <h1 class="font-sans text-2xl font-bold">📞 Support Contact</h1>
+      <p class="font-sans shadow-lg rounded p-4">
+        Please wait for our support representative to review your information
+        details before proceeding to the next steps.
+        <a class="bg-blue-50" href="#">Read more</a>
+      </p>
+    </div>
+
+    <!-- LEAD FORM -->
+    <div class="lead-form-container max-w-md container mx-auto my-16 hidden">
+      <div class="flex flex-col">
+        <img
+          class="w-28 self-center mb-4"
+          src="../images/message-media-logo.png"
+        />
+        <h1 class="text-2xl font-semibold text-center mb-4">
+          SMS Marketing Automation
+        </h1>
+      </div>
+      <form class="lead-form px-8 pt-6 pb-8 mb-4 bg-white rounded shadow-lg">
+        <div class="mb-4">
+          <label
+            class="block mb-2 text-sm font-bold text-gray-700"
+            for="firstName"
+          >
+            First Name
+          </label>
+          <input
+            class="
+              w-full
+              px-3
+              py-2
+              leading-tight
+              text-gray-700
+              border
+              rounded
+              shadow
+              appearance-none
+              focus:outline-none focus:shadow-outline
+            "
+            id="firstName"
+            type="text"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="lastName"
+          >
+            Last Name
+          </label>
+          <input
+            class="
+              shadow
+              appearance-none
+              border
+              rounded
+              w-full
+              py-2
+              px-3
+              text-gray-700
+              leading-tight
+              focus:outline-none focus:shadow-outline
+            "
+            id="lastName"
+            type="text"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+            Email
+          </label>
+          <input
+            class="
+              shadow
+              appearance-none
+              border
+              rounded
+              w-full
+              py-2
+              px-3
+              text-gray-700
+              leading-tight
+              focus:outline-none focus:shadow-outline
+            "
+            id="email"
+            type="email"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="phoneNumber"
+          >
+            Phone Number
+          </label>
+          <input
+            class="
+              shadow
+              appearance-none
+              border
+              rounded
+              w-full
+              py-2
+              px-3
+              text-gray-700
+              leading-tight
+              focus:outline-none focus:shadow-outline
+            "
+            id="phoneNumber"
+            type="number"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="companyName"
+          >
+            Company Name
+          </label>
+          <input
+            class="
+              shadow
+              appearance-none
+              border
+              rounded
+              w-full
+              py-2
+              px-3
+              text-gray-700
+              leading-tight
+              focus:outline-none focus:shadow-outline
+            "
+            id="companyName"
+            type="text"
+          />
+        </div>
+        <div class="mb-8">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="reason"
+          >
+            What's the main reason you've installed our App?
+          </label>
+          <select
+            class="
+              shadow
+              border
+              rounded
+              w-full
+              py-2
+              px-3
+              text-gray-700
+              leading-tight
+              focus:outline-none focus:shadow-outline
+            "
+            id="companyName"
+            type="text"
+          >
+            <option></option>
+            <option>2 way SMS Campaign</option>
+            <option>Abandoned Cart Recovery</option>
+            <option>Pop Up Forms</option>
+            <option>
+              Automate winback SMS to customers based on previous purchases
+            </option>
+            <option>To send welcome messages to new subscribers</option>
+            <option>To send back in stock notifications</option>
+          </select>
+        </div>
+        <div class="flex items-center justify-end">
+          <button
+            class="
+              bg-blue-500
+              hover:bg-blue-700
+              text-white
+              font-bold
+              py-2
+              px-4
+              rounded
+              focus:outline-none focus:shadow-outline
+            "
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+      <p class="text-center text-gray-500 text-xs">
+        &copy;2021 MessageMedia. All rights reserved.
+      </p>
+    </div>
   </body>
 </html>
