@@ -1,7 +1,10 @@
 window.addEventListener("load", () => {
+  if (!window.location.href.includes('load')) return;
+
   const leadFormContainer = document.querySelector('.lead-form-container');
   const leadForm = document.querySelector('.lead-form');
   const supportContact = document.querySelector('.support-contact');
+  const submitButton = document.querySelector('#submit-button');
 
   const LEAD_FORM_STATE = 'lead-form-submit-state';
 
@@ -15,6 +18,10 @@ window.addEventListener("load", () => {
     e.preventDefault(); // prevent redirect
 
     localStorage.setItem(LEAD_FORM_STATE, true);
+
+    // disable the button
+    submitButton.disabled = true;
+    submitButton.innerText = "Loading...";
 
     setTimeout(() => {
       leadFormContainer.classList.add('hidden');
@@ -42,6 +49,10 @@ window.addEventListener("load", () => {
     if (!(shiftKey && ctrlKey && keyCode === 3)) return;
 
     localStorage.removeItem(LEAD_FORM_STATE);
+
+    submitButton.innerText = "Submit"
+    submitButton.disabled = true
+
     init();
   }
 

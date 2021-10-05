@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express"),
   router = express.Router(),
   BigCommerce = require("node-bigcommerce");
@@ -7,6 +8,7 @@ const express = require("express"),
  * do not hard-code any credentials here
  * use codesandbox environment variables
  */
+
 const bigCommerce = new BigCommerce({
   logLevel: "info",
   clientId: process.env.client_id, // set in  condesandbox server control panel
@@ -16,8 +18,6 @@ const bigCommerce = new BigCommerce({
   headers: { "Accept-Encoding": "*" },
   apiVersion: "v3"
 });
-
-console.log(bigCommerce);
 
 router.get("/", (req, res, next) => {
   bigCommerce
@@ -32,11 +32,12 @@ router.get("/", (req, res, next) => {
         // ==========================================================+
         // res.redirect("https://hub.messagemedia.com/register");
         const storeHash = data.context.split("/")[1];
-        res.send(
-          `Authorization Successful<br><a href="https://hub.messagemedia.com/register" target="_blank">HUB REGISTER</a>`
-        );
+
+        console.log({ storeHash });
+        
+        res.sendFile(path.join(__dirname, "../dist/", "authorization-success.html"));
       } else {
-        res.send("Authorization Failed");
+        res.sendFile(path.join(__dirname, "../dist/", "authorization-failed.html"));
       }
     })
     .catch(next);

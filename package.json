@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js localhost 8080",
+    "start": "nodemon -r dotenv/config app.js localhost 8080",
     "dev": "webpack serve --mode=development --port=3000",
     "build": "webpack --mode=production"
   },
@@ -23,6 +23,10 @@
     "babel-loader": "8.2.2",
     "css-loader": "6.3.0",
     "css-minimizer-webpack-plugin": "^3.0.2",
+<<<<<<< HEAD
+=======
+    "dotenv": "^10.0.0",
+>>>>>>> 1679d2f (✨ Added lead form)
     "extract-loader": "5.1.0",
     "file-loader": "6.2.0",
     "html-loader": "2.1.2",
